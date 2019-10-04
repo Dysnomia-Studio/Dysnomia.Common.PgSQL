@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Dysnomia.Common.SQL.Common\Dysnomia.Common.SQL.Common.csproj" />
+    <ProjectReference Include="..\Dysnomia.Common.SQL\Dysnomia.Common.SQL.csproj" />
   </ItemGroup>
 
 </Project>
