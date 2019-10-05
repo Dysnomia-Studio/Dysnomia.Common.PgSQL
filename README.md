@@ -10,7 +10,7 @@ My name is Axel "Elanis" Soupé, I'm a French developer, and this is my company'
 ## How can I use your project ?
 This project is licenced under [MIT License](https://opensource.org/licenses/MIT), that mean you can use it in any way, anywere, you just have to keep all the copyright notices.
 
-There is also NuGet package available at: **No URL yet. Please wait few days**
+There is also NuGet package available at: [https://www.nuget.org/packages/Dysnomia.Common.SQL/](https://www.nuget.org/packages/Dysnomia.Common.SQL/)
 
 ## Can I contribute to your project ?
 Of course yes ! Create issues if you have needs or problems, but the best help is to make pull requests :)
