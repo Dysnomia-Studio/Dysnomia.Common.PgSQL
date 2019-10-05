@@ -9,10 +9,10 @@
     <PackageProjectUrl>https://github.com/Dysnomia-Studio/Dysnomia.Common.SQL</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Dysnomia-Studio/Dysnomia.Common.SQL</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>
-    <PackageReleaseNotes>First version of the library
+    <PackageReleaseNotes>Fix namespace
 
-https://github.com/Dysnomia-Studio/Dysnomia.Common.SQL/commit/0d9ca6920cbf604ce4d7bb4c08abeca59647cd58</PackageReleaseNotes>
-    <Version>1.0.0</Version>
+https://github.com/Dysnomia-Studio/Dysnomia.Common.SQL/commit/d4bf939a54e6dd3a7b6bb83d50ca29a35b7e12d6</PackageReleaseNotes>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
