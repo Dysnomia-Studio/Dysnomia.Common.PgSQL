@@ -25,7 +25,7 @@
 using System;
 using System.Data;
 
-namespace Dysnomia.Common.SQL.Common {
+namespace Dysnomia.Common.SQL {
 	public static class DbReaderMapper {
 		/**
 		 * String from reader
