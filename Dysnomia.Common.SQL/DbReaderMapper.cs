@@ -42,7 +42,7 @@ namespace Dysnomia.Common.SQL {
 		/**
 		* Short/Int16 from reader
 		*/
-		public static short GetShort(IDataReader reader, string key, bool catchNull = true, short defaultValue = 0) {
+		public static short GetInt16(IDataReader reader, string key, bool catchNull = true, short defaultValue = 0) {
 			var id = reader.GetOrdinal(key);
 
 			if (!catchNull || !reader.IsDBNull(id)) {
@@ -51,8 +51,8 @@ namespace Dysnomia.Common.SQL {
 
 			return defaultValue;
 		}
-		public static short GetInt16(IDataReader reader, string key, bool catchNull = true, short defaultValue = 0) {
-			return GetShort(reader, key, catchNull, defaultValue);
+		public static short GetShort(IDataReader reader, string key, bool catchNull = true, short defaultValue = 0) {
+			return GetInt16(reader, key, catchNull, defaultValue);
 		}
 
 		/**
@@ -67,7 +67,7 @@ namespace Dysnomia.Common.SQL {
 
 			return null;
 		}
-		public static short? GetInt16(IDataReader reader, string key) {
+		public static short? GetNullableShort(IDataReader reader, string key) {
 			return GetShort(reader, key);
 		}
 
@@ -110,7 +110,7 @@ namespace Dysnomia.Common.SQL {
 			var id = reader.GetOrdinal(key);
 
 			if (!catchNull || !reader.IsDBNull(id)) {
-				return reader.GetInt32(id);
+				return reader.GetInt64(id);
 			}
 
 			return defaultValue;
@@ -126,7 +126,7 @@ namespace Dysnomia.Common.SQL {
 			var id = reader.GetOrdinal(key);
 
 			if (!reader.IsDBNull(id)) {
-				return reader.GetInt32(id);
+				return reader.GetInt64(id);
 			}
 
 			return null;
