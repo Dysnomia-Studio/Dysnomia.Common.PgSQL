@@ -21,7 +21,6 @@
 	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 	SOFTWARE.
  */
-
 using System;
 using System.Data;
 
@@ -44,13 +43,13 @@ namespace Dysnomia.Common.SQL {
 		* Short/Int16 from reader
 		*/
 		public static short GetShort(IDataReader reader, string key, bool catchNull = true, short defaultValue = 0) {
-		var id = reader.GetOrdinal(key);
+			var id = reader.GetOrdinal(key);
 
-		if (!catchNull || !reader.IsDBNull(id)) {
-			return reader.GetInt16(id);
-		}
+			if (!catchNull || !reader.IsDBNull(id)) {
+				return reader.GetInt16(id);
+			}
 
-		return defaultValue;
+			return defaultValue;
 		}
 		public static short GetInt16(IDataReader reader, string key, bool catchNull = true, short defaultValue = 0) {
 			return GetShort(reader, key, catchNull, defaultValue);
