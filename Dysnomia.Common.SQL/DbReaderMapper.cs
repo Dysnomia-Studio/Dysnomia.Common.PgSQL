@@ -21,7 +21,6 @@
 	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 	SOFTWARE.
  */
-
 using System;
 using System.Data;
 
@@ -43,17 +42,17 @@ namespace Dysnomia.Common.SQL {
 		/**
 		* Short/Int16 from reader
 		*/
-		public static short GetShort(IDataReader reader, string key, bool catchNull = true, short defaultValue = 0) {
-		var id = reader.GetOrdinal(key);
-
-		if (!catchNull || !reader.IsDBNull(id)) {
-			return reader.GetInt16(id);
-		}
-
-		return defaultValue;
-		}
 		public static short GetInt16(IDataReader reader, string key, bool catchNull = true, short defaultValue = 0) {
-			return GetShort(reader, key, catchNull, defaultValue);
+			var id = reader.GetOrdinal(key);
+
+			if (!catchNull || !reader.IsDBNull(id)) {
+				return reader.GetInt16(id);
+			}
+
+			return defaultValue;
+		}
+		public static short GetShort(IDataReader reader, string key, bool catchNull = true, short defaultValue = 0) {
+			return GetInt16(reader, key, catchNull, defaultValue);
 		}
 
 		/**
@@ -68,7 +67,7 @@ namespace Dysnomia.Common.SQL {
 
 			return null;
 		}
-		public static short? GetInt16(IDataReader reader, string key) {
+		public static short? GetNullableShort(IDataReader reader, string key) {
 			return GetShort(reader, key);
 		}
 
@@ -111,7 +110,7 @@ namespace Dysnomia.Common.SQL {
 			var id = reader.GetOrdinal(key);
 
 			if (!catchNull || !reader.IsDBNull(id)) {
-				return reader.GetInt32(id);
+				return reader.GetInt64(id);
 			}
 
 			return defaultValue;
@@ -127,7 +126,7 @@ namespace Dysnomia.Common.SQL {
 			var id = reader.GetOrdinal(key);
 
 			if (!reader.IsDBNull(id)) {
-				return reader.GetInt32(id);
+				return reader.GetInt64(id);
 			}
 
 			return null;
@@ -173,6 +172,25 @@ namespace Dysnomia.Common.SQL {
 			}
 
 			return null;
+		}
+
+		/**
+		 * Guid
+		 */
+		public static Guid GetGuid(IDataReader reader, string key, bool catchNull, Guid defaultValue) {
+			var id = reader.GetOrdinal(key);
+
+			if (!catchNull || !reader.IsDBNull(id)) {
+				return reader.GetGuid(id);
+			}
+
+			return defaultValue;
+		}
+		public static Guid GetGuid(IDataReader reader, string key, bool catchNull, string guidData) {
+			return GetGuid(reader, key, catchNull, Guid.Parse(guidData));
+		}
+		public static Guid GetGuid(IDataReader reader, string key, bool catchNull = true) {
+			return GetGuid(reader, key, catchNull, Guid.Empty);
 		}
 	}
 }
