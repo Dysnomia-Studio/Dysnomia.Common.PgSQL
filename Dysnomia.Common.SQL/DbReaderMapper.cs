@@ -173,5 +173,24 @@ namespace Dysnomia.Common.SQL {
 
 			return null;
 		}
+
+		/**
+		 * Guid
+		 */
+		public static Guid GetGuid(IDataReader reader, string key, bool catchNull, Guid defaultValue) {
+			var id = reader.GetOrdinal(key);
+
+			if (!catchNull || !reader.IsDBNull(id)) {
+				return reader.GetGuid(id);
+			}
+
+			return defaultValue;
+		}
+		public static Guid GetGuid(IDataReader reader, string key, bool catchNull, string guidData) {
+			return GetGuid(reader, key, catchNull, Guid.Parse(guidData));
+		}
+		public static Guid GetGuid(IDataReader reader, string key, bool catchNull = true) {
+			return GetGuid(reader, key, catchNull, Guid.Empty);
+		}
 	}
 }
