@@ -9,10 +9,15 @@
     <PackageProjectUrl>https://github.com/Dysnomia-Studio/Dysnomia.Common.SQL</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Dysnomia-Studio/Dysnomia.Common.SQL</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>
-    <PackageReleaseNotes>Fix namespace
+    <PackageReleaseNotes>Add:
+ -  DbReaderMapper.GetGuid() (3 overrides)
 
-https://github.com/Dysnomia-Studio/Dysnomia.Common.SQL/commit/d4bf939a54e6dd3a7b6bb83d50ca29a35b7e12d6</PackageReleaseNotes>
-    <Version>1.0.1</Version>
+Fix:
+ - DbReaderMapper.GetInt64() were returning Int32
+ - There were a typo in name of DbReaderMapper.GetNullableShort()
+
+(https://github.com/Dysnomia-Studio/Dysnomia.Common.SQL/commit/d99e1ee22a4b59a1ee235bc78441d96198722c35)</PackageReleaseNotes>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
