@@ -9,11 +9,11 @@
     <PackageProjectUrl>https://github.com/Dysnomia-Studio/Dysnomia.Common.SQL</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Dysnomia-Studio/Dysnomia.Common.SQL</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>
-    <PackageReleaseNotes>Add:
-- DbHelper to execute stored procedures, select, and misc. statements</PackageReleaseNotes>
-    <Version>1.0.3-rc1</Version>
-    <AssemblyVersion>1.0.3.1</AssemblyVersion>
-    <FileVersion>1.0.3.1</FileVersion>
+    <PackageReleaseNotes>Improvement:
+- DbHelper methods are now async</PackageReleaseNotes>
+    <Version>1.0.3-rc2</Version>
+    <AssemblyVersion>1.0.3.2</AssemblyVersion>
+    <FileVersion>1.0.3.2</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
