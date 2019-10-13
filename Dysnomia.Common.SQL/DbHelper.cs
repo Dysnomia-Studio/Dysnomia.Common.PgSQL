@@ -35,7 +35,7 @@ namespace Dysnomia.Common.SQL {
 			}
 		}
 
-		public static Task<IDataReader> ExecStoredProcedure(IDbConnection connection, string procName, Dictionary<string, object> parameters = null) {
+		public async static Task<IDataReader> ExecStoredProcedure(IDbConnection connection, string procName, Dictionary<string, object> parameters = null) {
 			using (IDbCommand command = connection.CreateCommand()) {
 				command.CommandType = CommandType.StoredProcedure;
 				command.CommandText = procName;
@@ -44,11 +44,11 @@ namespace Dysnomia.Common.SQL {
 
 				BindParameters(command.Parameters, parameters);
 
-				return Task.Run(() => command.ExecuteReader());
+				return await Task.Run(() => command.ExecuteReader());
 			}
 		}
 
-		public static Task<IDataReader> ExecSelect(IDbConnection connection, string sqlStatement, Dictionary<string, object> parameters = null) {
+		public async static Task<IDataReader> ExecSelect(IDbConnection connection, string sqlStatement, Dictionary<string, object> parameters = null) {
 			using (IDbCommand command = connection.CreateCommand()) {
 				command.CommandType = CommandType.Text;
 				command.CommandText = sqlStatement;
@@ -57,11 +57,11 @@ namespace Dysnomia.Common.SQL {
 
 				BindParameters(command.Parameters, parameters);
 
-				return Task.Run(() => command.ExecuteReader());
+				return await Task.Run(() => command.ExecuteReader());
 			}
 		}
 
-		public static Task<int> ExecStatement(IDbConnection connection, string sqlStatement, Dictionary<string, object> parameters = null) {
+		public async static Task<int> ExecStatement(IDbConnection connection, string sqlStatement, Dictionary<string, object> parameters = null) {
 			using (IDbCommand command = connection.CreateCommand()) {
 				command.CommandType = CommandType.Text;
 				command.CommandText = sqlStatement;
@@ -70,7 +70,7 @@ namespace Dysnomia.Common.SQL {
 
 				BindParameters(command.Parameters, parameters);
 
-				return Task.Run(() => command.ExecuteNonQuery());
+				return await Task.Run(() => command.ExecuteNonQuery());
 			}
 		}
 	}
