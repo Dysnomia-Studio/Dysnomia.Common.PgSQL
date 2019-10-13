@@ -23,6 +23,7 @@
 */
 using System.Collections.Generic;
 using System.Data;
+using System.Threading.Tasks;
 
 namespace Dysnomia.Common.SQL {
 	public static class DbHelper {
@@ -34,7 +35,7 @@ namespace Dysnomia.Common.SQL {
 			}
 		}
 
-		public static IDataReader ExecStoredProcedure(IDbConnection connection, string procName, Dictionary<string, object> parameters = null) {
+		public static Task<IDataReader> ExecStoredProcedure(IDbConnection connection, string procName, Dictionary<string, object> parameters = null) {
 			using (IDbCommand command = connection.CreateCommand()) {
 				command.CommandType = CommandType.StoredProcedure;
 				command.CommandText = procName;
@@ -43,11 +44,11 @@ namespace Dysnomia.Common.SQL {
 
 				BindParameters(command.Parameters, parameters);
 
-				return command.ExecuteReader();
+				return Task.Run(() => command.ExecuteReader());
 			}
 		}
 
-		public static IDataReader ExecSelect(IDbConnection connection, string sqlStatement, Dictionary<string, object> parameters = null) {
+		public static Task<IDataReader> ExecSelect(IDbConnection connection, string sqlStatement, Dictionary<string, object> parameters = null) {
 			using (IDbCommand command = connection.CreateCommand()) {
 				command.CommandType = CommandType.Text;
 				command.CommandText = sqlStatement;
@@ -56,11 +57,11 @@ namespace Dysnomia.Common.SQL {
 
 				BindParameters(command.Parameters, parameters);
 
-				return command.ExecuteReader();
+				return Task.Run(() => command.ExecuteReader());
 			}
 		}
 
-		public static int ExecStatement(IDbConnection connection, string sqlStatement, Dictionary<string, object> parameters = null) {
+		public static Task<int> ExecStatement(IDbConnection connection, string sqlStatement, Dictionary<string, object> parameters = null) {
 			using (IDbCommand command = connection.CreateCommand()) {
 				command.CommandType = CommandType.Text;
 				command.CommandText = sqlStatement;
@@ -69,7 +70,7 @@ namespace Dysnomia.Common.SQL {
 
 				BindParameters(command.Parameters, parameters);
 
-				return command.ExecuteNonQuery();
+				return Task.Run(() => command.ExecuteNonQuery());
 			}
 		}
 	}
