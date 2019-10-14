@@ -58,7 +58,7 @@ namespace Dysnomia.Common.SQL {
 			}
 		}
 
-		public async static Task<IDataReader> ExecSelect(IDbConnection connection, string sqlStatement, Dictionary<string, object> parameters = null) {
+		public async static Task<IDataReader> ExecuteQuery(IDbConnection connection, string sqlStatement, Dictionary<string, object> parameters = null) {
 			using(IDbCommand command = connection.CreateCommand()) {
 				command.CommandType = CommandType.Text;
 				command.CommandText = sqlStatement;
@@ -71,7 +71,7 @@ namespace Dysnomia.Common.SQL {
 			}
 		}
 
-		public async static Task<int> ExecStatement(IDbConnection connection, string sqlStatement, Dictionary<string, object> parameters = null) {
+		public async static Task<int> ExecuteNonQuery(IDbConnection connection, string sqlStatement, Dictionary<string, object> parameters = null) {
 			using(IDbCommand command = connection.CreateCommand()) {
 				command.CommandType = CommandType.Text;
 				command.CommandText = sqlStatement;
