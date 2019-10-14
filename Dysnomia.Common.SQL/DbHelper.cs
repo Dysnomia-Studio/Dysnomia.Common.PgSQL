@@ -40,7 +40,11 @@ namespace Dysnomia.Common.SQL {
 		}
 
 		private static void OpenConnection(IDbConnection connection) {
-			if(connection.State != ConnectionState.Open) {
+			if(connection.State == ConnectionState.Broken) {
+				connection.Close();
+			}
+
+			if(connection.State == ConnectionState.Closed) {
 				connection.Open();
 			}
 		}
