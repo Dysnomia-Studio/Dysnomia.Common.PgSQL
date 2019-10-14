@@ -1,5 +1,5 @@
 # Dysnomia.Common.SQL
-A .NET Core Micro-ORM for PostgreSQL & SQL Server
+A driver agnostic Micro-ORM for .NET Core
 
 ## Why creating this Micro-ORM and publishing it to Github ?
 Because I like creating my own libraries, and anyway I was creating this so why not making it public ? There's no sensitive data, and it can help many peoples :)
