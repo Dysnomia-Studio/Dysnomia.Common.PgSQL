@@ -1,3 +1,9 @@
+[
+![](https://img.shields.io/nuget/dt/Dysnomia.Common.SQL?label=NuGet%20Downloads)
+![](https://img.shields.io/nuget/v/Dysnomia.Common.SQL?label=NuGet%20Version)
+](https://nuget.org/packages/Dysnomia.Common.SQL)
+
+
 # Dysnomia.Common.SQL
 A driver agnostic Micro-ORM for .NET Core
 
