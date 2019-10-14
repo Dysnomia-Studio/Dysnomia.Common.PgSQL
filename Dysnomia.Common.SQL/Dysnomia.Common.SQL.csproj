@@ -4,7 +4,7 @@
     <TargetFrameworks>netcoreapp2.0;netcoreapp2.1;netcoreapp2.2;netcoreapp3.0</TargetFrameworks>
     <Authors>Axel "Elanis" Soupé</Authors>
     <Company>Dysnomia</Company>
-    <Description>A .NET Core Micro-ORM for PostgreSQL &amp; SQL Server</Description>
+    <Description>A driver agnostic Micro-ORM for .NET Core</Description>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/Dysnomia-Studio/Dysnomia.Common.SQL</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Dysnomia-Studio/Dysnomia.Common.SQL</RepositoryUrl>

@@ -39,12 +39,18 @@ namespace Dysnomia.Common.SQL {
 			}
 		}
 
+		private static void OpenConnection(IDbConnection connection) {
+			if(connection.State != ConnectionState.Open) {
+				connection.Open();
+			}
+		}
+
 		public async static Task<IDataReader> ExecStoredProcedure(IDbConnection connection, string procName, Dictionary<string, object> parameters = null) {
 			using(IDbCommand command = connection.CreateCommand()) {
 				command.CommandType = CommandType.StoredProcedure;
 				command.CommandText = procName;
 
-				command.Connection.Open();
+				OpenConnection(command.Connection);
 
 				BindParameters(command, parameters);
 
@@ -57,7 +63,7 @@ namespace Dysnomia.Common.SQL {
 				command.CommandType = CommandType.Text;
 				command.CommandText = sqlStatement;
 
-				command.Connection.Open();
+				OpenConnection(command.Connection);
 
 				BindParameters(command, parameters);
 
@@ -70,7 +76,7 @@ namespace Dysnomia.Common.SQL {
 				command.CommandType = CommandType.Text;
 				command.CommandText = sqlStatement;
 
-				command.Connection.Open();
+				OpenConnection(command.Connection);
 
 				BindParameters(command, parameters);
 
