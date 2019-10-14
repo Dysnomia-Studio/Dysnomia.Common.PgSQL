@@ -27,48 +27,52 @@ using System.Threading.Tasks;
 
 namespace Dysnomia.Common.SQL {
 	public static class DbHelper {
-		public static void BindParameters(IDataParameterCollection parameters, Dictionary<string, object> parametersData) {
-			if (parametersData != null) {
-				foreach (KeyValuePair<string, object> kvp in parametersData) {
-					parameters[kvp.Key] = kvp.Value;
+		private static void BindParameters(IDbCommand command, Dictionary<string, object> parametersData) {
+			if(parametersData != null) {
+				foreach(KeyValuePair<string, object> kvp in parametersData) {
+					var parameter = command.CreateParameter();
+					parameter.ParameterName = kvp.Key;
+					parameter.Value = kvp.Value;
+
+					command.Parameters.Add(parameter);
 				}
 			}
 		}
 
 		public async static Task<IDataReader> ExecStoredProcedure(IDbConnection connection, string procName, Dictionary<string, object> parameters = null) {
-			using (IDbCommand command = connection.CreateCommand()) {
+			using(IDbCommand command = connection.CreateCommand()) {
 				command.CommandType = CommandType.StoredProcedure;
 				command.CommandText = procName;
 
 				command.Connection.Open();
 
-				BindParameters(command.Parameters, parameters);
+				BindParameters(command, parameters);
 
 				return await Task.Run(() => command.ExecuteReader());
 			}
 		}
 
 		public async static Task<IDataReader> ExecSelect(IDbConnection connection, string sqlStatement, Dictionary<string, object> parameters = null) {
-			using (IDbCommand command = connection.CreateCommand()) {
+			using(IDbCommand command = connection.CreateCommand()) {
 				command.CommandType = CommandType.Text;
 				command.CommandText = sqlStatement;
 
 				command.Connection.Open();
 
-				BindParameters(command.Parameters, parameters);
+				BindParameters(command, parameters);
 
 				return await Task.Run(() => command.ExecuteReader());
 			}
 		}
 
 		public async static Task<int> ExecStatement(IDbConnection connection, string sqlStatement, Dictionary<string, object> parameters = null) {
-			using (IDbCommand command = connection.CreateCommand()) {
+			using(IDbCommand command = connection.CreateCommand()) {
 				command.CommandType = CommandType.Text;
 				command.CommandText = sqlStatement;
 
 				command.Connection.Open();
 
-				BindParameters(command.Parameters, parameters);
+				BindParameters(command, parameters);
 
 				return await Task.Run(() => command.ExecuteNonQuery());
 			}
