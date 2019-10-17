@@ -9,11 +9,15 @@
     <PackageProjectUrl>https://github.com/Dysnomia-Studio/Dysnomia.Common.SQL</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Dysnomia-Studio/Dysnomia.Common.SQL</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>
-    <PackageReleaseNotes>- Open connection only if needed
-- Renamed ExecSelect to ExecuteQuery and ExecStatement to ExecuteNonQuery</PackageReleaseNotes>
-    <Version>1.0.3-rc5</Version>
-    <AssemblyVersion>1.0.3.5</AssemblyVersion>
-    <FileVersion>1.0.3.5</FileVersion>
+    <PackageReleaseNotes>Added DbHelper to execute stored procedures, select, and misc. statements
+- DbHelper.ExecStoredProcedure() to execute a stored procedure
+- DbHelper.ExecuteQuery() to execute a query returning a reader
+- DbHelper.ExecuteNonQuery() to a execute a query which doesn't return data
+
+Updated README &amp; Description</PackageReleaseNotes>
+    <Version>1.0.3</Version>
+    <AssemblyVersion>1.0.3.6</AssemblyVersion>
+    <FileVersion>1.0.3.6</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
