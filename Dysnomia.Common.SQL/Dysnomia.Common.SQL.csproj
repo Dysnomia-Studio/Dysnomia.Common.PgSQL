@@ -4,20 +4,16 @@
     <TargetFrameworks>netcoreapp2.0;netcoreapp2.1;netcoreapp2.2;netcoreapp3.0</TargetFrameworks>
     <Authors>Axel "Elanis" Soupé</Authors>
     <Company>Dysnomia</Company>
-    <Description>A .NET Core Micro-ORM for PostgreSQL &amp; SQL Server</Description>
+    <Description>A driver agnostic Micro-ORM for .NET Core</Description>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/Dysnomia-Studio/Dysnomia.Common.SQL</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Dysnomia-Studio/Dysnomia.Common.SQL</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>
-    <PackageReleaseNotes>Add:
- -  DbReaderMapper.GetGuid() (3 overrides)
-
-Fix:
- - DbReaderMapper.GetInt64() were returning Int32
- - There were a typo in name of DbReaderMapper.GetNullableShort()
-
-(https://github.com/Dysnomia-Studio/Dysnomia.Common.SQL/commit/d99e1ee22a4b59a1ee235bc78441d96198722c35)</PackageReleaseNotes>
-    <Version>1.0.2</Version>
+    <PackageReleaseNotes>- Open connection only if needed
+- Renamed ExecSelect to ExecuteQuery and ExecStatement to ExecuteNonQuery</PackageReleaseNotes>
+    <Version>1.0.3-rc5</Version>
+    <AssemblyVersion>1.0.3.5</AssemblyVersion>
+    <FileVersion>1.0.3.5</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
