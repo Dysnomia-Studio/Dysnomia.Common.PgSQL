@@ -28,44 +28,39 @@ using System.Threading.Tasks;
 namespace Dysnomia.Common.SQL {
 	public static class DbHelper {
 		private static void BindParameters(this IDbCommand command, Dictionary<string, object> parametersData) {
-			if (parametersData != null) {
-				foreach (KeyValuePair<string, object> kvp in parametersData) {
-					var parameter = command.CreateParameter();
-					parameter.ParameterName = kvp.Key;
-					parameter.Value = kvp.Value;
+			if(parametersData != null) {
+				foreach(KeyValuePair<string, object> kvp in parametersData) {
+					if(kvp.Value is IDataParameter) {
+						command.Parameters.Add(kvp.Value);
+					} else {
+						var parameter = command.CreateParameter();
+						parameter.ParameterName = kvp.Key;
+						parameter.Value = kvp.Value;
 
-					command.Parameters.Add(parameter);
+						command.Parameters.Add(parameter);
+					}
 				}
 			}
 		}
 
 		private static void OpenConnection(this IDbConnection connection) {
-			if (connection.State == ConnectionState.Broken) {
+			if(connection.State == ConnectionState.Broken) {
 				connection.Close();
 			}
 
-			if (connection.State == ConnectionState.Closed) {
+			if(connection.State == ConnectionState.Closed) {
 				connection.Open();
 			}
 		}
 
-		public async static Task<IDataReader> ExecStoredProcedure(this IDbConnection connection, string procName, Dictionary<string, object> parameters = null) {
-			using (IDbCommand command = connection.CreateCommand()) {
+		public async static Task<IDataReader> ExecStoredProcedure(this IDbConnection connection, string procName, Dictionary<string, object> parameters = null, IDbTransaction transaction = null) {
+			using(IDbCommand command = connection.CreateCommand()) {
 				command.CommandType = CommandType.StoredProcedure;
 				command.CommandText = procName;
 
-				command.Connection.OpenConnection();
-
-				command.BindParameters(parameters);
-
-				return await Task.Run(() => command.ExecuteReader());
-			}
-		}
-
-		public async static Task<IDataReader> ExecuteQuery(this IDbConnection connection, string sqlStatement, Dictionary<string, object> parameters = null) {
-			using (IDbCommand command = connection.CreateCommand()) {
-				command.CommandType = CommandType.Text;
-				command.CommandText = sqlStatement;
+				if(transaction != null) {
+					command.Transaction = transaction;
+				}
 
 				command.Connection.OpenConnection();
 
@@ -75,10 +70,31 @@ namespace Dysnomia.Common.SQL {
 			}
 		}
 
-		public async static Task<int> ExecuteNonQuery(this IDbConnection connection, string sqlStatement, Dictionary<string, object> parameters = null) {
-			using (IDbCommand command = connection.CreateCommand()) {
+		public async static Task<IDataReader> ExecuteQuery(this IDbConnection connection, string sqlStatement, Dictionary<string, object> parameters = null, IDbTransaction transaction = null) {
+			using(IDbCommand command = connection.CreateCommand()) {
 				command.CommandType = CommandType.Text;
 				command.CommandText = sqlStatement;
+
+				if(transaction != null) {
+					command.Transaction = transaction;
+				}
+
+				command.Connection.OpenConnection();
+
+				command.BindParameters(parameters);
+
+				return await Task.Run(() => command.ExecuteReader());
+			}
+		}
+
+		public async static Task<int> ExecuteNonQuery(this IDbConnection connection, string sqlStatement, Dictionary<string, object> parameters = null, IDbTransaction transaction = null) {
+			using(IDbCommand command = connection.CreateCommand()) {
+				command.CommandType = CommandType.Text;
+				command.CommandText = sqlStatement;
+
+				if(transaction != null) {
+					command.Transaction = transaction;
+				}
 
 				command.Connection.OpenConnection();
 
