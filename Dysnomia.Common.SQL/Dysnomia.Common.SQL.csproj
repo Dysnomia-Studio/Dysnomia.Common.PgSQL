@@ -9,10 +9,10 @@
     <PackageProjectUrl>https://github.com/Dysnomia-Studio/Dysnomia.Common.SQL</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Dysnomia-Studio/Dysnomia.Common.SQL</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>
-    <PackageReleaseNotes>DataTableHelper + Commands with transaction</PackageReleaseNotes>
-    <Version>1.1.1-rc1</Version>
-    <AssemblyVersion>1.1.1.0</AssemblyVersion>
-    <FileVersion>1.1.1.0</FileVersion>
+    <PackageReleaseNotes>Fix DataTableHelper</PackageReleaseNotes>
+    <Version>1.1.1-rc2</Version>
+    <AssemblyVersion>1.1.1.1</AssemblyVersion>
+    <FileVersion>1.1.1.1</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

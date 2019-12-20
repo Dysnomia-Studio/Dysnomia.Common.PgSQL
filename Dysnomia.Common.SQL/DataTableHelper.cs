@@ -21,11 +21,12 @@ namespace Dysnomia.Common.SQL {
 					continue;
 				}
 
+				dataTable.Columns.Add(new DataColumn(info.Name, Nullable.GetUnderlyingType(info.PropertyType) ?? info.PropertyType));
+
 				if(value == null) {
 					value = DBNull.Value;
 				}
 
-				dataTable.Columns.Add(new DataColumn(info.Name, Nullable.GetUnderlyingType(info.PropertyType) ?? info.PropertyType));
 				values.Add(value);
 			}
 
