@@ -9,10 +9,10 @@
     <PackageProjectUrl>https://github.com/Dysnomia-Studio/Dysnomia.Common.SQL</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Dysnomia-Studio/Dysnomia.Common.SQL</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>
-    <PackageReleaseNotes>Using extension methods instead of parameters and compatibility with .Net Core 3.1</PackageReleaseNotes>
-    <Version>1.1.0</Version>
-    <AssemblyVersion>1.1.0.2</AssemblyVersion>
-    <FileVersion>1.1.0.2</FileVersion>
+    <PackageReleaseNotes>DataTableHelper + Commands with transaction</PackageReleaseNotes>
+    <Version>1.1.1-rc1</Version>
+    <AssemblyVersion>1.1.1.0</AssemblyVersion>
+    <FileVersion>1.1.1.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
