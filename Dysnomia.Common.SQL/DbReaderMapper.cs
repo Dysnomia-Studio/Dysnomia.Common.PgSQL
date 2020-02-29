@@ -177,7 +177,7 @@ namespace Dysnomia.Common.SQL {
 		/**
 		 * Nullable Double from reader
 		 */
-		public static double? GetNullablDouble(this IDataReader reader, string key) {
+		public static double? GetNullableDouble(this IDataReader reader, string key) {
 			var id = reader.GetOrdinal(key);
 
 			if (!reader.IsDBNull(id)) {

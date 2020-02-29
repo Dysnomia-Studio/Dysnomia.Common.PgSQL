@@ -9,12 +9,10 @@
     <PackageProjectUrl>https://github.com/Dysnomia-Studio/Dysnomia.Common.SQL</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Dysnomia-Studio/Dysnomia.Common.SQL</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>
-    <PackageReleaseNotes>- Added a way to use a command with transaction (1.1.1-rc1)
-- Added helper to create DataTable from custom object (1.1.1-rc1) - WARNING: still experimental
-- Added DbNullHelper (1.1.1-rc3)</PackageReleaseNotes>
-    <Version>1.1.1</Version>
-    <AssemblyVersion>1.1.1.4</AssemblyVersion>
-    <FileVersion>1.1.1.4</FileVersion>
+    <PackageReleaseNotes>DbReaderMapper.GetDouble() / DbReaderMapper.GetNullableDouble()</PackageReleaseNotes>
+    <Version>1.1.2</Version>
+    <AssemblyVersion>1.1.2.0</AssemblyVersion>
+    <FileVersion>1.1.2.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
