@@ -31,6 +31,6 @@ COPY . ./
 
 RUN dotnet sonarscanner begin /k:"dysnomia-common-sql" /d:sonar.host.url="$SONAR_HOST" /d:sonar.login="$SONAR_TOKEN" /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml" /d:sonar.coverage.exclusions="**Test*.cs"
 RUN dotnet restore Dysnomia.Common.SQL.sln --ignore-failed-sources /p:EnableDefaultItems=false
-RUN dotnet build Dysnomia.Common.SQL.sln --no-restore -c Release -o out
+RUN dotnet build Dysnomia.Common.SQL.sln /m:1 --no-restore -c Release -o out
 RUN dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
 RUN dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"
