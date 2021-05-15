@@ -12,20 +12,18 @@ namespace Dysnomia.Common.SQL {
 
 			DataTable dataTable = new DataTable();
 			List<object> values = new List<object>();
-			foreach(PropertyInfo info in properties) {
+			foreach (PropertyInfo info in properties) {
 				var value = info.GetValue(myObject);
 
-				if((!value.GetType().IsPrimitive && !(value is string) && !(value is DateTime)) ||
+				if (value == null) {
+					value = DBNull.Value;
+				} else if ((!value.GetType().IsPrimitive && !(value is string) && !(value is DateTime)) ||
 					value is IEnumerable) {
 
 					continue;
 				}
 
 				dataTable.Columns.Add(new DataColumn(info.Name, Nullable.GetUnderlyingType(info.PropertyType) ?? info.PropertyType));
-
-				if(value == null) {
-					value = DBNull.Value;
-				}
 
 				values.Add(value);
 			}
