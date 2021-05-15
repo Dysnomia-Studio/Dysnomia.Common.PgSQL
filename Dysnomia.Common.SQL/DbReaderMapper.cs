@@ -42,7 +42,7 @@ namespace Dysnomia.Common.SQL {
 		/**
 		* Short/Int16 from reader
 		*/
-		public static short GetInt16(this IDataReader reader, string key, bool catchNull = true, short defaultValue = 0) {
+		public static Int16 GetInt16(this IDataReader reader, string key, bool catchNull = true, short defaultValue = 0) {
 			var id = reader.GetOrdinal(key);
 
 			if (!catchNull || !reader.IsDBNull(id)) {
@@ -55,10 +55,11 @@ namespace Dysnomia.Common.SQL {
 			return GetInt16(reader, key, catchNull, defaultValue);
 		}
 
+
 		/**
 		 * Nullable Short/Int16 from reader
 		 */
-		public static short? GetNullableInt16(this IDataReader reader, string key) {
+		public static Int16? GetNullableInt16(this IDataReader reader, string key) {
 			var id = reader.GetOrdinal(key);
 
 			if (!reader.IsDBNull(id)) {
@@ -68,13 +69,46 @@ namespace Dysnomia.Common.SQL {
 			return null;
 		}
 		public static short? GetNullableShort(this IDataReader reader, string key) {
-			return GetShort(reader, key);
+			return GetNullableInt16(reader, key);
+		}
+
+		/**
+		 * UShort/UInt16 from reader
+		 */
+		public static UInt16 GetUInt16(this IDataReader reader, string key, bool catchNull = true, ushort defaultValue = 0) {
+			var id = reader.GetOrdinal(key);
+
+			if (!catchNull || !reader.IsDBNull(id)) {
+				return (UInt16)reader.GetInt32(id);
+			}
+
+			return defaultValue;
+		}
+		public static ushort GetUShort(this IDataReader reader, string key, bool catchNull = true, ushort defaultValue = 0) {
+			return GetUInt16(reader, key, catchNull, defaultValue);
+		}
+
+
+		/**
+		 * Nullable UShort/UInt16 from reader
+		 */
+		public static UInt16? GetNullableUInt16(this IDataReader reader, string key) {
+			var id = reader.GetOrdinal(key);
+
+			if (!reader.IsDBNull(id)) {
+				return (UInt16?)reader.GetInt32(id);
+			}
+
+			return null;
+		}
+		public static ushort? GetNullableUShort(this IDataReader reader, string key) {
+			return GetNullableUInt16(reader, key);
 		}
 
 		/**
 		 * Int/Int32 from reader
 		 */
-		public static int GetInt32(this IDataReader reader, string key, bool catchNull = true, int defaultValue = 0) {
+		public static Int32 GetInt32(this IDataReader reader, string key, bool catchNull = true, int defaultValue = 0) {
 			var id = reader.GetOrdinal(key);
 
 			if (!catchNull || !reader.IsDBNull(id)) {
@@ -83,8 +117,24 @@ namespace Dysnomia.Common.SQL {
 
 			return defaultValue;
 		}
-		public static int GetInt(this IDataReader reader, string key, bool catchNull = true, short defaultValue = 0) {
+		public static int GetInt(this IDataReader reader, string key, bool catchNull = true, int defaultValue = 0) {
 			return GetInt32(reader, key, catchNull, defaultValue);
+		}
+
+		/**
+		 * UInt/UInt32 from reader
+		 */
+		public static UInt32 GetUInt32(this IDataReader reader, string key, bool catchNull = true, uint defaultValue = 0) {
+			var id = reader.GetOrdinal(key);
+
+			if (!catchNull || !reader.IsDBNull(id)) {
+				return (UInt32)reader.GetInt64(id);
+			}
+
+			return defaultValue;
+		}
+		public static uint GetUInt(this IDataReader reader, string key, bool catchNull = true, uint defaultValue = 0) {
+			return GetUInt32(reader, key, catchNull, defaultValue);
 		}
 
 		/**
@@ -104,9 +154,25 @@ namespace Dysnomia.Common.SQL {
 		}
 
 		/**
-		 * Int/Int32 from reader
+		 * Nullable UInt/UInt32 from reader
 		 */
-		public static long GetInt64(this IDataReader reader, string key, bool catchNull = true, long defaultValue = 0) {
+		public static UInt32? GetNullableUInt32(this IDataReader reader, string key) {
+			var id = reader.GetOrdinal(key);
+
+			if (!reader.IsDBNull(id)) {
+				return (UInt32?)reader.GetInt64(id);
+			}
+
+			return null;
+		}
+		public static uint? GetNullableUInt(this IDataReader reader, string key) {
+			return GetNullableUInt32(reader, key);
+		}
+
+		/**
+		 * Long/Int64 from reader
+		 */
+		public static Int64 GetInt64(this IDataReader reader, string key, bool catchNull = true, Int64 defaultValue = 0) {
 			var id = reader.GetOrdinal(key);
 
 			if (!catchNull || !reader.IsDBNull(id)) {
@@ -120,7 +186,23 @@ namespace Dysnomia.Common.SQL {
 		}
 
 		/**
-		 * Nullable Int/Int32 from reader
+		 * ULong/UInt64 from reader
+		 */
+		public static UInt64 GetUInt64(this IDataReader reader, string key, bool catchNull = true, UInt64 defaultValue = 0) {
+			var id = reader.GetOrdinal(key);
+
+			if (!catchNull || !reader.IsDBNull(id)) {
+				return (UInt64)reader.GetInt64(id);
+			}
+
+			return defaultValue;
+		}
+		public static ulong GetULong(this IDataReader reader, string key, bool catchNull = true, ulong defaultValue = 0) {
+			return GetUInt64(reader, key, catchNull, defaultValue);
+		}
+
+		/**
+		 * Nullable Long/Int64 from reader
 		 */
 		public static long? GetNullableInt64(this IDataReader reader, string key) {
 			var id = reader.GetOrdinal(key);
@@ -133,6 +215,22 @@ namespace Dysnomia.Common.SQL {
 		}
 		public static long? GetNullableLong(this IDataReader reader, string key) {
 			return GetNullableInt64(reader, key);
+		}
+
+		/**
+		 * Nullable Long/Int64 from reader
+		 */
+		public static UInt64? GetNullableUInt64(this IDataReader reader, string key) {
+			var id = reader.GetOrdinal(key);
+
+			if (!reader.IsDBNull(id)) {
+				return (UInt64)reader.GetInt64(id);
+			}
+
+			return null;
+		}
+		public static ulong? GetNullableULong(this IDataReader reader, string key) {
+			return GetNullableUInt64(reader, key);
 		}
 
 		/**
@@ -201,6 +299,19 @@ namespace Dysnomia.Common.SQL {
 		}
 
 		/**
+		 * Nullable Boolean from reader
+		 */
+		public static bool? GetNullableBoolean(this IDataReader reader, string key) {
+			var id = reader.GetOrdinal(key);
+
+			if (!reader.IsDBNull(id)) {
+				return reader.GetBoolean(id);
+			}
+
+			return null;
+		}
+
+		/**
 		 * DateTime from reader
 		 */
 		public static DateTime GetDateTime(this IDataReader reader, string key, bool catchNull = true, DateTime defaultValue = new DateTime()) {
@@ -243,6 +354,19 @@ namespace Dysnomia.Common.SQL {
 		}
 		public static Guid GetGuid(this IDataReader reader, string key, bool catchNull = true) {
 			return GetGuid(reader, key, catchNull, Guid.Empty);
+		}
+
+		/**
+		 * Nullable Guid
+		 */
+		public static Guid? GetNullableGuid(this IDataReader reader, string key) {
+			var id = reader.GetOrdinal(key);
+
+			if (!reader.IsDBNull(id)) {
+				return reader.GetGuid(id);
+			}
+
+			return null;
 		}
 	}
 }
