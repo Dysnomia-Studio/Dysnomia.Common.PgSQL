@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Dysnomia.Common.SQL</name>
+    </assembly>
+    <members>
+        <member name="M:Dysnomia.Common.SQL.DataTableHelper.CreateDataTableFromObject``1(``0)">
+            <summary>
+            Generates a datatable from an object
+            </summary>
+            <typeparam name="T">Any type</typeparam>
+            <param name="myObject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbHelper.ExecStoredProcedure(System.Data.IDbConnection,System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Data.IDbTransaction)">
+            <summary>
+            Execute SQL stored procedure with reader as a result
+            </summary>
+            <param name="connection">Database connection</param>
+            <param name="procName">Procedure to execute</param>
+            <param name="parameters">Statement parameters</param>
+            <param name="transaction">(Optional) Transaction this statement should be in</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbHelper.ExecuteQuery(System.Data.IDbConnection,System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Data.IDbTransaction)">
+            <summary>
+            Execute SQL query with reader as a result
+            </summary>
+            <param name="connection">Database connection</param>
+            <param name="sqlStatement">Statement to execute</param>
+            <param name="parameters">Statement parameters</param>
+            <param name="transaction">(Optional) Transaction this statement should be in</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbHelper.ExecuteNonQuery(System.Data.IDbConnection,System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Data.IDbTransaction)">
+            <summary>
+            Execute SQL query without any result returned
+            </summary>
+            <param name="connection">Database connection</param>
+            <param name="sqlStatement">Statement to execute</param>
+            <param name="parameters">Statement parameters</param>
+            <param name="transaction">(Optional) Transaction this statement should be in</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbNullHelper.DbNullOrString(System.String)">
+            <summary>
+            Return string or DbNull if the string is null or empty
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbNullHelper.DbNullOrValue(System.Object)">
+            <summary>
+            Return value or DbNull if the value is null
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetString(System.Data.IDataReader,System.String,System.Boolean,System.String)">
+            String from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetInt16(System.Data.IDataReader,System.String,System.Boolean,System.Int16)">
+            Short/Int16 from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetShort(System.Data.IDataReader,System.String,System.Boolean,System.Int16)">
+            Short/Int16 from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetNullableInt16(System.Data.IDataReader,System.String)">
+            Nullable Short/Int16 from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetNullableShort(System.Data.IDataReader,System.String)">
+            Nullable Short/Int16 from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetUInt16(System.Data.IDataReader,System.String,System.Boolean,System.UInt16)">
+            UShort/UInt16 from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetUShort(System.Data.IDataReader,System.String,System.Boolean,System.UInt16)">
+            UShort/UInt16 from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetNullableUInt16(System.Data.IDataReader,System.String)">
+            Nullable UShort/UInt16 from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetNullableUShort(System.Data.IDataReader,System.String)">
+            Nullable UShort/UInt16 from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetInt32(System.Data.IDataReader,System.String,System.Boolean,System.Int32)">
+            Int/Int32 from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetInt(System.Data.IDataReader,System.String,System.Boolean,System.Int32)">
+            Int/Int32 from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetUInt32(System.Data.IDataReader,System.String,System.Boolean,System.UInt32)">
+            UInt/UInt32 from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetUInt(System.Data.IDataReader,System.String,System.Boolean,System.UInt32)">
+            UInt/UInt32 from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetNullableInt32(System.Data.IDataReader,System.String)">
+            Nullable Int/Int32 from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetNullableInt(System.Data.IDataReader,System.String)">
+            Nullable Int/Int32 from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetNullableUInt32(System.Data.IDataReader,System.String)">
+            Nullable UInt/UInt32 from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetNullableUInt(System.Data.IDataReader,System.String)">
+            Nullable UInt/UInt32 from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetInt64(System.Data.IDataReader,System.String,System.Boolean,System.Int64)">
+            Long/Int64 from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetLong(System.Data.IDataReader,System.String,System.Boolean,System.Int64)">
+            Long/Int64 from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetUInt64(System.Data.IDataReader,System.String,System.Boolean,System.UInt64)">
+            ULong/UInt64 from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetULong(System.Data.IDataReader,System.String,System.Boolean,System.UInt64)">
+            ULong/UInt64 from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetNullableInt64(System.Data.IDataReader,System.String)">
+            Nullable Long/Int64 from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetNullableLong(System.Data.IDataReader,System.String)">
+            Nullable Long/Int64 from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetNullableUInt64(System.Data.IDataReader,System.String)">
+            Nullable Long/Int64 from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetNullableULong(System.Data.IDataReader,System.String)">
+            Nullable Long/Int64 from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetDecimal(System.Data.IDataReader,System.String,System.Boolean,System.Decimal)">
+            Decimal from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetNullableDecimal(System.Data.IDataReader,System.String)">
+            Nullable Decimal from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetDouble(System.Data.IDataReader,System.String,System.Boolean,System.Double)">
+            Double from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetNullableDouble(System.Data.IDataReader,System.String)">
+            Nullable Double from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetBoolean(System.Data.IDataReader,System.String,System.Boolean,System.Boolean)">
+            Boolean from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetNullableBoolean(System.Data.IDataReader,System.String)">
+            Nullable Boolean from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetDateTime(System.Data.IDataReader,System.String,System.Boolean,System.DateTime)">
+            DateTime from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetNullableDateTime(System.Data.IDataReader,System.String)">
+            Nullable DateTime from reader
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetGuid(System.Data.IDataReader,System.String,System.Boolean,System.Guid)">
+            Guid
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetGuid(System.Data.IDataReader,System.String,System.Boolean,System.String)">
+            Guid
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetGuid(System.Data.IDataReader,System.String,System.Boolean)">
+            Guid
+        </member>
+        <member name="M:Dysnomia.Common.SQL.DbReaderMapper.GetNullableGuid(System.Data.IDataReader,System.String)">
+            Nullable Guid
+        </member>
+    </members>
+</doc>

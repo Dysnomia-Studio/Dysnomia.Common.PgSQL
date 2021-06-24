@@ -6,6 +6,12 @@ using System.Reflection;
 
 namespace Dysnomia.Common.SQL {
 	public static class DataTableHelper {
+		/// <summary>
+		/// Generates a datatable from an object
+		/// </summary>
+		/// <typeparam name="T">Any type</typeparam>
+		/// <param name="myObject"></param>
+		/// <returns></returns>
 		public static DataTable CreateDataTableFromObject<T>(T myObject) {
 			Type type = typeof(T);
 			var properties = type.GetProperties();
@@ -32,6 +38,5 @@ namespace Dysnomia.Common.SQL {
 
 			return dataTable;
 		}
-
 	}
 }

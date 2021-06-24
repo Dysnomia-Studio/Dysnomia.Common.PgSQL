@@ -25,14 +25,24 @@ using System;
 
 namespace Dysnomia.Common.SQL {
 	public static class DbNullHelper {
+		/// <summary>
+		/// Return string or DbNull if the string is null or empty
+		/// </summary>
+		/// <param name="val"></param>
+		/// <returns></returns>
 		public static object DbNullOrString(this string val) {
-			if(string.IsNullOrEmpty(val)) {
+			if (string.IsNullOrEmpty(val)) {
 				return DBNull.Value;
 			}
 
 			return val;
 		}
 
+		/// <summary>
+		/// Return value or DbNull if the value is null
+		/// </summary>
+		/// <param name="val"></param>
+		/// <returns></returns>
 		public static object DbNullOrValue(this object val) {
 			return val ?? DBNull.Value;
 		}

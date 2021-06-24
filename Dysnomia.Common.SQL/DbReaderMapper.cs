@@ -51,6 +51,9 @@ namespace Dysnomia.Common.SQL {
 
 			return defaultValue;
 		}
+		/**
+		* Short/Int16 from reader
+		*/
 		public static short GetShort(this IDataReader reader, string key, bool catchNull = true, short defaultValue = 0) {
 			return GetInt16(reader, key, catchNull, defaultValue);
 		}
@@ -68,6 +71,9 @@ namespace Dysnomia.Common.SQL {
 
 			return null;
 		}
+		/**
+		 * Nullable Short/Int16 from reader
+		 */
 		public static short? GetNullableShort(this IDataReader reader, string key) {
 			return GetNullableInt16(reader, key);
 		}
@@ -84,6 +90,9 @@ namespace Dysnomia.Common.SQL {
 
 			return defaultValue;
 		}
+		/**
+		 * UShort/UInt16 from reader
+		 */
 		public static ushort GetUShort(this IDataReader reader, string key, bool catchNull = true, ushort defaultValue = 0) {
 			return GetUInt16(reader, key, catchNull, defaultValue);
 		}
@@ -101,6 +110,9 @@ namespace Dysnomia.Common.SQL {
 
 			return null;
 		}
+		/**
+		 * Nullable UShort/UInt16 from reader
+		 */
 		public static ushort? GetNullableUShort(this IDataReader reader, string key) {
 			return GetNullableUInt16(reader, key);
 		}
@@ -117,6 +129,9 @@ namespace Dysnomia.Common.SQL {
 
 			return defaultValue;
 		}
+		/**
+		 * Int/Int32 from reader
+		 */
 		public static int GetInt(this IDataReader reader, string key, bool catchNull = true, int defaultValue = 0) {
 			return GetInt32(reader, key, catchNull, defaultValue);
 		}
@@ -133,6 +148,9 @@ namespace Dysnomia.Common.SQL {
 
 			return defaultValue;
 		}
+		/**
+		 * UInt/UInt32 from reader
+		 */
 		public static uint GetUInt(this IDataReader reader, string key, bool catchNull = true, uint defaultValue = 0) {
 			return GetUInt32(reader, key, catchNull, defaultValue);
 		}
@@ -149,6 +167,9 @@ namespace Dysnomia.Common.SQL {
 
 			return null;
 		}
+		/**
+		 * Nullable Int/Int32 from reader
+		 */
 		public static int? GetNullableInt(this IDataReader reader, string key) {
 			return GetNullableInt32(reader, key);
 		}
@@ -165,6 +186,9 @@ namespace Dysnomia.Common.SQL {
 
 			return null;
 		}
+		/**
+		 * Nullable UInt/UInt32 from reader
+		 */
 		public static uint? GetNullableUInt(this IDataReader reader, string key) {
 			return GetNullableUInt32(reader, key);
 		}
@@ -181,6 +205,9 @@ namespace Dysnomia.Common.SQL {
 
 			return defaultValue;
 		}
+		/**
+		 * Long/Int64 from reader
+		 */
 		public static long GetLong(this IDataReader reader, string key, bool catchNull = true, long defaultValue = 0) {
 			return GetInt64(reader, key, catchNull, defaultValue);
 		}
@@ -197,6 +224,9 @@ namespace Dysnomia.Common.SQL {
 
 			return defaultValue;
 		}
+		/**
+		 * ULong/UInt64 from reader
+		 */
 		public static ulong GetULong(this IDataReader reader, string key, bool catchNull = true, ulong defaultValue = 0) {
 			return GetUInt64(reader, key, catchNull, defaultValue);
 		}
@@ -213,6 +243,9 @@ namespace Dysnomia.Common.SQL {
 
 			return null;
 		}
+		/**
+		 * Nullable Long/Int64 from reader
+		 */
 		public static long? GetNullableLong(this IDataReader reader, string key) {
 			return GetNullableInt64(reader, key);
 		}
@@ -229,6 +262,9 @@ namespace Dysnomia.Common.SQL {
 
 			return null;
 		}
+		/**
+		 * Nullable Long/Int64 from reader
+		 */
 		public static ulong? GetNullableULong(this IDataReader reader, string key) {
 			return GetNullableUInt64(reader, key);
 		}
@@ -349,9 +385,15 @@ namespace Dysnomia.Common.SQL {
 
 			return defaultValue;
 		}
+		/**
+		 * Guid
+		 */
 		public static Guid GetGuid(this IDataReader reader, string key, bool catchNull, string guidData) {
 			return GetGuid(reader, key, catchNull, Guid.Parse(guidData));
 		}
+		/**
+		 * Guid
+		 */
 		public static Guid GetGuid(this IDataReader reader, string key, bool catchNull = true) {
 			return GetGuid(reader, key, catchNull, Guid.Empty);
 		}
