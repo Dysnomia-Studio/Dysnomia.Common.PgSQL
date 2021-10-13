@@ -61,10 +61,11 @@ namespace Dysnomia.Common.SQL {
 		/// <param name="parameters">Statement parameters</param>
 		/// <param name="transaction">(Optional) Transaction this statement should be in</param>
 		/// <returns></returns>
-		public async static Task<IDataReader> ExecStoredProcedure(this IDbConnection connection, string procName, Dictionary<string, object> parameters = null, IDbTransaction transaction = null) {
+		public async static Task<IDataReader> ExecStoredProcedure(this IDbConnection connection, string procName, Dictionary<string, object> parameters = null, IDbTransaction transaction = null, int timeout = 30) {
 			using (IDbCommand command = connection.CreateCommand()) {
 				command.CommandType = CommandType.StoredProcedure;
 				command.CommandText = procName;
+				command.CommandTimeout = timeout;
 
 				if (transaction != null) {
 					command.Transaction = transaction;
@@ -86,10 +87,11 @@ namespace Dysnomia.Common.SQL {
 		/// <param name="parameters">Statement parameters</param>
 		/// <param name="transaction">(Optional) Transaction this statement should be in</param>
 		/// <returns></returns>
-		public async static Task<IDataReader> ExecuteQuery(this IDbConnection connection, string sqlStatement, Dictionary<string, object> parameters = null, IDbTransaction transaction = null) {
+		public async static Task<IDataReader> ExecuteQuery(this IDbConnection connection, string sqlStatement, Dictionary<string, object> parameters = null, IDbTransaction transaction = null, int timeout = 30) {
 			using (IDbCommand command = connection.CreateCommand()) {
 				command.CommandType = CommandType.Text;
 				command.CommandText = sqlStatement;
+				command.CommandTimeout = timeout;
 
 				if (transaction != null) {
 					command.Transaction = transaction;
@@ -111,10 +113,11 @@ namespace Dysnomia.Common.SQL {
 		/// <param name="parameters">Statement parameters</param>
 		/// <param name="transaction">(Optional) Transaction this statement should be in</param>
 		/// <returns></returns>
-		public async static Task<int> ExecuteNonQuery(this IDbConnection connection, string sqlStatement, Dictionary<string, object> parameters = null, IDbTransaction transaction = null) {
+		public async static Task<int> ExecuteNonQuery(this IDbConnection connection, string sqlStatement, Dictionary<string, object> parameters = null, IDbTransaction transaction = null, int timeout = 30) {
 			using (IDbCommand command = connection.CreateCommand()) {
 				command.CommandType = CommandType.Text;
 				command.CommandText = sqlStatement;
+				command.CommandTimeout = timeout;
 
 				if (transaction != null) {
 					command.Transaction = transaction;
