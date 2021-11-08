@@ -6,9 +6,9 @@
 - [DataTableHelper](#T-Dysnomia-Common-SQL-DataTableHelper 'Dysnomia.Common.SQL.DataTableHelper')
   - [CreateDataTableFromObject\`\`1(myObject)](#M-Dysnomia-Common-SQL-DataTableHelper-CreateDataTableFromObject``1-``0- 'Dysnomia.Common.SQL.DataTableHelper.CreateDataTableFromObject``1(``0)')
 - [DbHelper](#T-Dysnomia-Common-SQL-DbHelper 'Dysnomia.Common.SQL.DbHelper')
-  - [ExecStoredProcedure(connection,procName,parameters,transaction)](#M-Dysnomia-Common-SQL-DbHelper-ExecStoredProcedure-System-Data-IDbConnection,System-String,System-Collections-Generic-Dictionary{System-String,System-Object},System-Data-IDbTransaction- 'Dysnomia.Common.SQL.DbHelper.ExecStoredProcedure(System.Data.IDbConnection,System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Data.IDbTransaction)')
-  - [ExecuteNonQuery(connection,sqlStatement,parameters,transaction)](#M-Dysnomia-Common-SQL-DbHelper-ExecuteNonQuery-System-Data-IDbConnection,System-String,System-Collections-Generic-Dictionary{System-String,System-Object},System-Data-IDbTransaction- 'Dysnomia.Common.SQL.DbHelper.ExecuteNonQuery(System.Data.IDbConnection,System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Data.IDbTransaction)')
-  - [ExecuteQuery(connection,sqlStatement,parameters,transaction)](#M-Dysnomia-Common-SQL-DbHelper-ExecuteQuery-System-Data-IDbConnection,System-String,System-Collections-Generic-Dictionary{System-String,System-Object},System-Data-IDbTransaction- 'Dysnomia.Common.SQL.DbHelper.ExecuteQuery(System.Data.IDbConnection,System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Data.IDbTransaction)')
+  - [ExecStoredProcedure(connection,procName,parameters,transaction)](#M-Dysnomia-Common-SQL-DbHelper-ExecStoredProcedure-System-Data-IDbConnection,System-String,System-Collections-Generic-Dictionary{System-String,System-Object},System-Data-IDbTransaction,System-Int32- 'Dysnomia.Common.SQL.DbHelper.ExecStoredProcedure(System.Data.IDbConnection,System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Data.IDbTransaction,System.Int32)')
+  - [ExecuteNonQuery(connection,sqlStatement,parameters,transaction)](#M-Dysnomia-Common-SQL-DbHelper-ExecuteNonQuery-System-Data-IDbConnection,System-String,System-Collections-Generic-Dictionary{System-String,System-Object},System-Data-IDbTransaction,System-Int32- 'Dysnomia.Common.SQL.DbHelper.ExecuteNonQuery(System.Data.IDbConnection,System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Data.IDbTransaction,System.Int32)')
+  - [ExecuteQuery(connection,sqlStatement,parameters,transaction)](#M-Dysnomia-Common-SQL-DbHelper-ExecuteQuery-System-Data-IDbConnection,System-String,System-Collections-Generic-Dictionary{System-String,System-Object},System-Data-IDbTransaction,System-Int32- 'Dysnomia.Common.SQL.DbHelper.ExecuteQuery(System.Data.IDbConnection,System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Data.IDbTransaction,System.Int32)')
 - [DbNullHelper](#T-Dysnomia-Common-SQL-DbNullHelper 'Dysnomia.Common.SQL.DbNullHelper')
   - [DbNullOrString(val)](#M-Dysnomia-Common-SQL-DbNullHelper-DbNullOrString-System-String- 'Dysnomia.Common.SQL.DbNullHelper.DbNullOrString(System.String)')
   - [DbNullOrValue(val)](#M-Dysnomia-Common-SQL-DbNullHelper-DbNullOrValue-System-Object- 'Dysnomia.Common.SQL.DbNullHelper.DbNullOrValue(System.Object)')
@@ -88,7 +88,7 @@ Generates a datatable from an object
 
 Dysnomia.Common.SQL
 
-<a name='M-Dysnomia-Common-SQL-DbHelper-ExecStoredProcedure-System-Data-IDbConnection,System-String,System-Collections-Generic-Dictionary{System-String,System-Object},System-Data-IDbTransaction-'></a>
+<a name='M-Dysnomia-Common-SQL-DbHelper-ExecStoredProcedure-System-Data-IDbConnection,System-String,System-Collections-Generic-Dictionary{System-String,System-Object},System-Data-IDbTransaction,System-Int32-'></a>
 ### ExecStoredProcedure(connection,procName,parameters,transaction) `method`
 
 ##### Summary
@@ -108,7 +108,7 @@ Execute SQL stored procedure with reader as a result
 | parameters | [System.Collections.Generic.Dictionary{System.String,System.Object}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.Object}') | Statement parameters |
 | transaction | [System.Data.IDbTransaction](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Data.IDbTransaction 'System.Data.IDbTransaction') | (Optional) Transaction this statement should be in |
 
-<a name='M-Dysnomia-Common-SQL-DbHelper-ExecuteNonQuery-System-Data-IDbConnection,System-String,System-Collections-Generic-Dictionary{System-String,System-Object},System-Data-IDbTransaction-'></a>
+<a name='M-Dysnomia-Common-SQL-DbHelper-ExecuteNonQuery-System-Data-IDbConnection,System-String,System-Collections-Generic-Dictionary{System-String,System-Object},System-Data-IDbTransaction,System-Int32-'></a>
 ### ExecuteNonQuery(connection,sqlStatement,parameters,transaction) `method`
 
 ##### Summary
@@ -128,7 +128,7 @@ Execute SQL query without any result returned
 | parameters | [System.Collections.Generic.Dictionary{System.String,System.Object}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.Object}') | Statement parameters |
 | transaction | [System.Data.IDbTransaction](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Data.IDbTransaction 'System.Data.IDbTransaction') | (Optional) Transaction this statement should be in |
 
-<a name='M-Dysnomia-Common-SQL-DbHelper-ExecuteQuery-System-Data-IDbConnection,System-String,System-Collections-Generic-Dictionary{System-String,System-Object},System-Data-IDbTransaction-'></a>
+<a name='M-Dysnomia-Common-SQL-DbHelper-ExecuteQuery-System-Data-IDbConnection,System-String,System-Collections-Generic-Dictionary{System-String,System-Object},System-Data-IDbTransaction,System-Int32-'></a>
 ### ExecuteQuery(connection,sqlStatement,parameters,transaction) `method`
 
 ##### Summary

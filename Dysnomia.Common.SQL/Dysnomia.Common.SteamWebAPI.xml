@@ -12,7 +12,7 @@
             <param name="myObject"></param>
             <returns></returns>
         </member>
-        <member name="M:Dysnomia.Common.SQL.DbHelper.ExecStoredProcedure(System.Data.IDbConnection,System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Data.IDbTransaction)">
+        <member name="M:Dysnomia.Common.SQL.DbHelper.ExecStoredProcedure(System.Data.IDbConnection,System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Data.IDbTransaction,System.Int32)">
             <summary>
             Execute SQL stored procedure with reader as a result
             </summary>
@@ -22,7 +22,7 @@
             <param name="transaction">(Optional) Transaction this statement should be in</param>
             <returns></returns>
         </member>
-        <member name="M:Dysnomia.Common.SQL.DbHelper.ExecuteQuery(System.Data.IDbConnection,System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Data.IDbTransaction)">
+        <member name="M:Dysnomia.Common.SQL.DbHelper.ExecuteQuery(System.Data.IDbConnection,System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Data.IDbTransaction,System.Int32)">
             <summary>
             Execute SQL query with reader as a result
             </summary>
@@ -32,7 +32,7 @@
             <param name="transaction">(Optional) Transaction this statement should be in</param>
             <returns></returns>
         </member>
-        <member name="M:Dysnomia.Common.SQL.DbHelper.ExecuteNonQuery(System.Data.IDbConnection,System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Data.IDbTransaction)">
+        <member name="M:Dysnomia.Common.SQL.DbHelper.ExecuteNonQuery(System.Data.IDbConnection,System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Data.IDbTransaction,System.Int32)">
             <summary>
             Execute SQL query without any result returned
             </summary>
