@@ -6,7 +6,7 @@
 [![Duplicated Lines (%)](https://sonar.dysnomia.studio/api/project_badges/measure?project=dysnomia-common-sql&metric=duplicated_lines_density)](https://sonar.dysnomia.studio/dashboard?id=dysnomia-common-sql) [![Coverage](https://sonar.dysnomia.studio/api/project_badges/measure?project=dysnomia-common-sql&metric=coverage)](https://sonar.dysnomia.studio/dashboard?id=dysnomia-common-sql)
 
 # Dysnomia.Common.SQL
-A driver agnostic Micro-ORM for .NET Core
+A driver agnostic Micro-ORM for .NET Core and .NET
 
 ## Why creating this Micro-ORM and publishing it to Github ?
 Because I like creating my own libraries, and anyway I was creating this so why not making it public ? There's no sensitive data, and it can help many peoples :)
