@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
+		<TargetFrameworks>net8.0;net9.0</TargetFrameworks>
 		<Authors>Axel "Elanis" Soupé</Authors>
 		<Company>Dysnomia</Company>
 		<Description>A driver agnostic Micro-ORM for .NET Core</Description>
@@ -12,7 +12,7 @@
 		<Version>1.0.0</Version>
 		<AssemblyVersion>1.0.0</AssemblyVersion>
 		<FileVersion>1.0.0</FileVersion>
-		<DocumentationFile>Dysnomia.Common.SteamWebAPI.xml</DocumentationFile>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<DocumentationMarkdown>..\Doc.md</DocumentationMarkdown>
 	</PropertyGroup>
 
